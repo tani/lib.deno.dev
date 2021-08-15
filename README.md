@@ -3,6 +3,12 @@
 This service provide a version aliasing for deno library.
 
 ```typescript
+// node-semver style
+import abc from "https://lib.deno.dev/x/abc@~1.3/mod.ts"
+import abc from "https://lib.deno.dev/x/abc@>=1.2/mod.ts"
+import abc from "https://lib.deno.dev/x/abc@^1.2/mod.ts"
+import abc from "https://lib.deno.dev/x/abc@1/mod.ts"
+// weak semver style
 import abc from "https://lib.deno.dev/x/abc@v1/mod.ts"
 import abc from "https://lib.deno.dev/x/abc@v1.3/mod.ts"
 import abc from "https://lib.deno.dev/x/abc@v1.3.3/mod.ts"
