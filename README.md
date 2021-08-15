@@ -1,6 +1,6 @@
 # deno.land Version Aliasing
 
-This service provide a version aliasing for deno library.
+This service provides a version aliasing for deno library.
 
 ```typescript
 // node-semver style
