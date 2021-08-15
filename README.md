@@ -1,4 +1,4 @@
-# Deno Version Aliasing
+# deno.land Version Aliasing
 
 This service provide a version aliasing for deno library.
 
