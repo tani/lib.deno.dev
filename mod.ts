@@ -12,7 +12,6 @@ export async function redirect(url: string): Promise<string> {
   const response = await fetch(request);
   const json = await response.json();
   const tags = json.versions.filter((tag: string) => {
-      console.log([tag, tagHint])
       return semver.satisfies(tag, tagHint);
   });
   const latestTag = tags[0];
