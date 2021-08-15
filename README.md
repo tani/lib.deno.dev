@@ -3,9 +3,9 @@
 This service provide a version aliasing for deno library.
 
 ```typescript
-import abc from "https://pkg.deno.dev/x/abc@v1/mod.ts"
-import abc from "https://pkg.deno.dev/x/abc@v1.3/mod.ts"
-import abc from "https://pkg.deno.dev/x/abc@v1.3.3/mod.ts"
+import abc from "https://lib.deno.dev/x/abc@v1/mod.ts"
+import abc from "https://lib.deno.dev/x/abc@v1.3/mod.ts"
+import abc from "https://lib.deno.dev/x/abc@v1.3.3/mod.ts"
 // ↓
 import abc from "https://deno.land/x/abc@v1.3.3/mode.ts"
 ```
@@ -17,7 +17,7 @@ In the modern CDN providers such as jsDelivr and unpkg, we can use __version ali
 ## Usage
 
 This system is a drop-in replacement of the `deno.land`.
-You need to replace `deno.land` by `pkg.deno.dev`.
+You need to replace `deno.land` by `lib.deno.dev`.
 
 ## License
 
