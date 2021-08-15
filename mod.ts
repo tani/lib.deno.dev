@@ -1,6 +1,6 @@
 /// <reference path="./typings.d.ts" />
 
-import semver from "https://esm.sh/semver@7";
+import * as semver from "https://lib.deno.dev/x/semver@v1";
 
 export async function redirect(url: string): Promise<string> {
   const _url = new URL(url);
