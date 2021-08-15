@@ -1,4 +1,4 @@
-# Deno Version Aliasing
+# deno.land Version Aliasing
 
 This service provide a version aliasing for deno library.
 
@@ -12,7 +12,7 @@ import abc from "https://deno.land/x/abc@v1.3.3/mode.ts"
 
 ## Motivation
 
-In the modern CDN providers such as jsDelivr and unpkg, we can use __version alias__ to retrieve a patch update without modifications. We bring this system to deno.land using Deno Deploy. You can get the latest compatible version every cache updates.
+In the modern CDN providers such as jsDelivr and unpkg, we can use the __version alias__ to retrieve a patch update without modifications. We bring this system to deno.land using Deno Deploy. You can get the latest compatible version every cache updates.
 
 ## Usage
 
