@@ -19,8 +19,8 @@ export async function redirect(url: string): Promise<string> {
 }
 
 self.addEventListener("fetch", async (event) => {
-  let dest = "https://github.com/tani/lib.deno.dev";
-  if (new URL(event.request.url).pathname !== "") {
+  let dest =  "https://github.com/tani/lib.deno.dev"
+  if (new URL(event.request.url).pathname !== "/") {
     dest = await redirect(event.request.url);
   }
   event.respondWith(Response.redirect(dest, 302));
