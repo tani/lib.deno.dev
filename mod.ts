@@ -1,5 +1,5 @@
+// Copyright 2021 TANIGUCHI Masaya. All rights reserved. git.io/mit-license
 /// <reference path="./deploy.d.ts" />
-
 import * as semver from "https://lib.deno.dev/x/semver@v1/mod.ts";
 
 const re_name = "[^/@]+";
@@ -48,7 +48,7 @@ export async function redirect(
 }
 
 self.addEventListener("fetch", async (event) => {
-  let dest = "https://github.com/tani/lib.deno.dev";
+  let dest = "https://deno.land";
   if (new URL(event.request.url).pathname !== "/") {
     dest = await redirect(event.request.url, fetchTagsFromDenoLand);
   }

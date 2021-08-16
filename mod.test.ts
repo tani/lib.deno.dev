@@ -1,5 +1,5 @@
+// Copyright 2021 TANIGUCHI Masaya. All rights reserved. git.io/mit-license
 /// <reference path="./test.d.ts" />
-//
 import { re_pathname, redirect } from "./mod.ts";
 import { assert, equal, assertEquals } from "https://deno.land/std/testing/asserts.ts";
 
