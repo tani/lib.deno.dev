@@ -1,13 +1,14 @@
 // Copyright 2021 TANIGUCHI Masaya. All rights reserved. git.io/mit-license
+// Copyright 2021 the Deno authors. All rights reserved. MIT license
 /// <reference path="./deploy.d.ts" />
-import * as semver from "https://lib.deno.dev/x/semver@v1/mod.ts";
+import * as semver from "https://deno.land/x/semver@v1.4.0/mod.ts";
 
 const re_name = "[^/@]+";
-const re_version = "[^/@]+";
+const re_range = "[^/@]+";
 const re_path = "|/.*";
 const re_x = "(?:x/)?";
-export const re_pathname = new RegExp(
-  `^/(${re_x})(${re_name})@(${re_version})(${re_path})$`,
+const re_pathname = new RegExp(
+  `^/(${re_x})(${re_name})@(${re_range})(${re_path})$`,
 );
 
 type FetchTags = (name: string) => Promise<string[]>;
@@ -24,10 +25,7 @@ async function fetchTagsFromDenoLand(name: string): Promise<string[]> {
   }
 }
 
-export async function redirect(
-  url: string,
-  fetchTags: FetchTags,
-): Promise<string> {
+async function redirect(url: string, fetchTags: FetchTags): Promise<string> {
   const loose = true;
   const _url = new URL(url);
   const match = decodeURIComponent(_url.pathname).match(re_pathname);
@@ -46,6 +44,8 @@ export async function redirect(
   }
   return `https://deno.land${_url.pathname}`;
 }
+
+export { re_pathname, redirect };
 
 self.addEventListener("fetch", async (event) => {
   let dest = "https://deno.land";
