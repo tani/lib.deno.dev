@@ -1,5 +1,4 @@
 // Copyright 2021 TANIGUCHI Masaya. All rights reserved. git.io/mit-license
-// Copyright 2021 the Deno authors. All rights reserved. MIT license
 /// <reference path="./deploy.d.ts" />
 import * as semver from "https://deno.land/x/semver@v1.4.0/mod.ts";
 
@@ -48,7 +47,7 @@ async function redirect(url: string, fetchTags: FetchTags): Promise<string> {
 export { re_pathname, redirect };
 
 self.addEventListener("fetch", async (event) => {
-  let dest = "https://deno.land";
+  let dest = "https://github.com/tani/lib.deno.dev";
   if (new URL(event.request.url).pathname !== "/") {
     dest = await redirect(event.request.url, fetchTagsFromDenoLand);
   }
