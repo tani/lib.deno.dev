@@ -27,7 +27,7 @@ You need to replace `deno.land` by `lib.deno.dev`.
 
 ## Support
 
-Thank you for your [:heart: GitHub Sponsors (@tani)](https://github.com/sponsors/tani)
+Thank you for :star: GitHub stars and [:heart: GitHub Sponsors (@tani)](https://github.com/sponsors/tani)
 
 ## License
 
