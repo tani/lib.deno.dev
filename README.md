@@ -25,6 +25,10 @@ In the modern CDN providers such as jsDelivr and unpkg, we can use the __version
 This system is a drop-in replacement of the `deno.land`.
 You need to replace `deno.land` by `lib.deno.dev`.
 
+## Support
+
+Thank you for your [:heart: GitHub Sponsors (@tani)](https://github.com/sponsors/tani)
+
 ## License
 
-2020 &copy; TANIGUCHI Masaya, [MIT License](https://masaya.mit-license.org)
+2021 &copy; TANIGUCHI Masaya, [MIT License](https://masaya.mit-license.org)
