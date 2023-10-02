@@ -30,6 +30,9 @@ async function redirect(url: string, fetchTags: FetchTags): Promise<string> {
   const match = decodeURIComponent(_url.pathname).match(re_pathname);
   if (match) {
     const [, x, name, range, path] = match;
+    if (range === "latest") {
+      return `https://deno.land/${x}${name}${path}`;
+    }
     const tags = (await fetchTags(name))
       .filter((tag: string) => {
         return semver.valid(tag, loose) && semver.satisfies(tag, range, loose);
