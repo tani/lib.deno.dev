@@ -52,6 +52,12 @@ self.addEventListener("fetch", async (event) => {
     dest = await redirect(event.request.url, fetchTagsFromDenoLand);
   }
   const res = Response.redirect(dest, 302);
-  res.headers.set("Access-Control-Allow-Origin", "*")
-  event.respondWith(res);
+  event.respondWith(new Response(res.body, {
+    status: res.status,
+    statusText: res.statusText,
+    headers: [
+      ...res.headers,
+      ["Access-Control-Allow-Origin", "*"]
+    ]
+  }));
 });
