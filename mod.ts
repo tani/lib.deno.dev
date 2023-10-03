@@ -43,9 +43,6 @@ async function redirect(url: string, fetchTags: FetchTags): Promise<string> {
       const tag = tags[tags.length - 1];
       return `https://deno.land/${x}${name}@${tag}${path}`;
     }
-    if(range === "latest") {
-      return `https://deno.land/${x}${name}${path}`;
-    }
   }
   return `https://deno.land${_url.pathname}`;
 }
