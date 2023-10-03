@@ -40,7 +40,7 @@ async function redirect(url: string, fetchTags: FetchTags): Promise<string> {
       const tag = tags[tags.length - 1];
       return `https://deno.land/${x}${name}@${tag}${path}`;
     }
-    if(range === "latest") {
+    if (range === "latest") {
       return `https://deno.land/${x}${name}${path}`;
     }
   }
@@ -54,5 +54,13 @@ self.addEventListener("fetch", async (event) => {
   if (new URL(event.request.url).pathname !== "/") {
     dest = await redirect(event.request.url, fetchTagsFromDenoLand);
   }
-  event.respondWith(Response.redirect(dest, 302));
+  const res = Response.redirect(dest, 302);
+  event.respondWith(new Response(res.body, {
+    status: res.status,
+    statusText: res.statusText,
+    headers: [
+      ...res.headers,
+      ["Access-Control-Allow-Origin", "*"]
+    ]
+  }));
 });
