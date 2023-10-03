@@ -1,6 +1,6 @@
 // Copyright 2021 TANIGUCHI Masaya. All rights reserved. git.io/mit-license
-/// <reference path="./deploy.d.ts" />
 import * as semver from "https://deno.land/x/semver@v1.4.0/mod.ts";
+// import 'https://deno.land/x/fetch_event_adapter/listen.ts';
 
 const re_name = "[^/@]+";
 const re_range = "[^/@]+";
@@ -42,6 +42,9 @@ async function redirect(url: string, fetchTags: FetchTags): Promise<string> {
     if (tags.length > 0) {
       const tag = tags[tags.length - 1];
       return `https://deno.land/${x}${name}@${tag}${path}`;
+    }
+    if(range === "latest") {
+      return `https://deno.land/${x}${name}${path}`;
     }
   }
   return `https://deno.land${_url.pathname}`;

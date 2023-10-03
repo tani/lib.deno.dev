@@ -1,6 +1,5 @@
 // Copyright 2021 TANIGUCHI Masaya. All rights reserved. git.io/mit-license
 // Copyright 2021 the Deno authors. All rights reserved. MIT license
-/// <reference path="./test.d.ts" />
 import { re_pathname, redirect } from "./mod.ts";
 import {
   assertStrictEquals,
@@ -127,4 +126,16 @@ Deno.test("Redirect", async () => {
     const expected = `https://deno.land/x/${name}@${encoded}${path}`;
     assertStrictEquals(output, expected);
   }
+  ranges = [
+    "latest"
+  ];
+  for (const range of ranges) {
+    const encoded = encodeURIComponent(range);
+    const input = `https://example.com/x/${name}@${encoded}${path}`;
+    const output = await redirect(input, fetchTags);
+    const expected = `https://deno.land/x/${name}${path}`;
+    assertStrictEquals(output, expected);
+  }
 });
+
+

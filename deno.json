@@ -1,0 +1,5 @@
+{
+  "tasks": {
+    "test": "deno test --allow-net --location=http://localhost:8000"
+  }
+}
