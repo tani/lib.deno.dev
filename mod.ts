@@ -1,6 +1,6 @@
 // Copyright 2021 TANIGUCHI Masaya. All rights reserved. git.io/mit-license
 import * as semver from "https://deno.land/x/semver@v1.4.0/mod.ts";
-import 'https://deno.land/x/fetch_event_adapter/listen.ts';
+// import 'https://deno.land/x/fetch_event_adapter/listen.ts';
 
 const re_name = "[^/@]+";
 const re_range = "[^/@]+";
